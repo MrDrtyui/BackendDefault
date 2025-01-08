@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: expressBackend
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+        - PORT=3001
+    command: npm start
