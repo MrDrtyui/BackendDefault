@@ -7,10 +7,9 @@ const app = express();
 const prisma = new PrismaClient();
 
 app.use(express.json());
+app.use('/test', testRouter);
 
 app.use(authMiddleware)
-
-app.use('/test', testRouter);
 
 app.get('/', (req, res) => {
     res.send('Hello!');
