@@ -4,8 +4,7 @@ export const authMiddleware = (req: Request, res: Response, next: NextFunction):
     const authorization = req.headers.authorization;
     if (!authorization) {
         // Отправляем ответ и прекращаем выполнение мидлвара
-        res.status(401).json({ error: 'No authorization.' });
-        return;
+        return res.status(401).json({ error: 'No authorization.' });
     }
     // Если авторизация есть, продолжаем выполнение
     next();
